@@ -15,8 +15,7 @@ describe("HenkakuKoukan", function () {
     const Koukan = await ethers.getContractFactory("HenkakuKoukan");
     const koukan: any = await Koukan.deploy(v1Token.address, v2Token.address)
     await koukan.deployed()
-
-    await v2Token.mint(koukan.address, ethers.utils.parseUnits('10000000000000', 18))
+    await v2Token.mint(koukan.address, ethers.utils.parseUnits('1000', 18))
     return { koukan, v1Token, v2Token, owner, otherAccount };
   }
 
